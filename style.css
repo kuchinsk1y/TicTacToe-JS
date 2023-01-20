@@ -1,0 +1,46 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(92, 154, 214);
+  background: linear-gradient(
+    90deg,
+    rgba(92, 154, 214, 1) 35%,
+    rgba(30, 142, 242, 1) 79%,
+    rgba(0, 136, 255, 1) 100%
+  );
+}
+
+.board {
+  height: 300px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  font-size: 50px;
+  text-align: center;
+  line-height: 95px;
+  cursor: pointer;
+  user-select: none;
+}
+.cell:nth-child(3n) {
+  border-right: none;
+}
+.cell:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.cell.highlight {
+  background-color: white;
+}
